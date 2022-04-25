@@ -8,25 +8,37 @@
     padding: 0;
 }
 body{
+    position: relative;
     font-family: var(--main-font);
     background-color: white;
+    font-size: 0.625rem;
 }
-header nav{
+header{
+    height: 4.5rem;
+    width: 100%;
+    padding-block-end: 1.5rem;
+    padding-block-start: 1.5rem;
+    padding-inline-start: 2rem;
+    padding-inline-end: 2rem;
+    position:absolute;
+    z-index: 2;
     display: flex;
     justify-content: space-between;
     margin-block-end: 3.75rem;
 }
 @media (max-width:70.25rem) {
-    header nav{
-        justify-content: space-evenly;
+    header{
+        justify-content: space-around;
         font-weight: 800;
     }
 }
-nav img.logo{
+header img.logo{
     display: block;
     width: 10rem;
 }
-nav .try-button{
+header .try-button{
+    display: flex;
+    align-items: center;
     padding: 0.625rem 2.5rem;
     background-color: white;
     border-radius: 2.5rem;
@@ -36,19 +48,22 @@ nav .try-button{
     -ms-border-radius: 2.5rem;
     -o-border-radius: 2.5rem;
 }
-nav .try-button:hover{
+header .try-button:hover{
     cursor: pointer;
     color: hsl(208, 11%, 55%);
 }
-.container{
+
+.content{
+    height: 100vh;
     width: 100%;
     padding: 1.5rem 2.5rem;
     background-image: url(../images/bg-hero-desktop.svg);
     background-size: cover;
     background-color: hsl(193, 100%, 96%);
 }
+
 @media (max-width:70.25rem) {
-    .container{
+    .content{
         background-image: url(../images/bg-hero-mobile.svg);
         background-position: center;
         display: flex;
@@ -56,17 +71,15 @@ nav .try-button:hover{
         flex-direction: column;
         padding: 1.25rem;
     }
-    nav img.logo{
+    header img.logo{
         width:  9.375rem ;;
     }
-    nav{
-        font-size: 0.625rem;
-    }
+
 }
-.container img{
+nav .content img{
     width: 50%;
 }
-header .content{
+ .content{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -74,42 +87,43 @@ header .content{
     flex-wrap: wrap;
     flex-direction: row;
 }
-
-header .content .text{
+ .content .text{
+     margin-block-end: auto;
+     margin-block-start: 4.5rem;
     padding: 1.25rem;
-    width: 50%;
+    width: 40%;
     display: flex;
     flex-direction: column;
     align-content: space-between;
 }
-.content .text h2{
-    width: 25rem;
+.content .text h1{
+    width: 100%;
     margin-block-end: 1.25rem;
     font-family: var(--main-font-alt);
     font-size: 1.875rem;
 }
 .content .text .paragraph{
-    width: 31.25rem;
+    width: 100%;
     margin-block-end: 2.5rem;
     font-size: 1.25rem;
 }
 @media (max-width:70.25rem){
-    header .content .text{
+     .content .text{
         text-align: center;
         width: 100%;
     }
-    header .content .text h2{
+     .content .text h2{
         width: 100%;
     }
-    header .content .text .paragraph{
+     .content .text .paragraph{
         width: 100%;
     }
-    .content img{
+    nav .content img{
         width: 60%;
     }
 }
 
-header .content .button{
+ .content .button{
     text-align: center;
     color: white;
     width: 16.25rem;
@@ -122,7 +136,7 @@ header .content .button{
     -ms-border-radius: 1.5rem;
     -o-border-radius: 1.5rem;
 }
-header .content .button:hover{
+ .content .button:hover{
     opacity: 80%;
     cursor: pointer;
 }
@@ -132,9 +146,10 @@ header .content .button:hover{
         margin-inline-start: auto;
     }
 }
-section{
+main{
     position: relative;
     width: 100%;
+    margin-block-start: 4.5rem;
     padding: 6.25rem 12.5rem;
 }
 .card{
@@ -161,7 +176,7 @@ section{
     margin-block-end: 6.25rem;
 }
 @media (max-width:70.25rem) {
-    section{
+    main{
         padding: 1.25rem;
     }
     .card{
